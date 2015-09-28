@@ -113,11 +113,11 @@ namespace Daniel15.Sharpamp
 		/// <summary>
 		/// Occurs when the currently playing song has been changed
 		/// </summary>
-		public event SongChangedEventHandler SongChanged;
+        public event EventHandler<SongChangedEventArgs> SongChanged;
 		/// <summary>
 		/// Occurs when the playing status changes
 		/// </summary>
-		public event StatusChangedEventHandler StatusChanged;
+		public event EventHandler<StatusChangedEventArgs> StatusChanged;
 
 		/// <summary>
 		/// Gets the currently playing song
@@ -437,12 +437,6 @@ namespace Daniel15.Sharpamp
 
 	#region Events
 	/// <summary>
-	/// Represents the method that will handle the SongChangedEvent
-	/// </summary>
-	/// <param name="sender">Winamp object that sent the event</param>
-	/// <param name="e">Arguments for the event</param>
-	public delegate void SongChangedEventHandler(object sender, SongChangedEventArgs e);
-	/// <summary>
 	/// Provides data for the SongChanged event
 	/// </summary>
 	public class SongChangedEventArgs : EventArgs
@@ -461,12 +455,6 @@ namespace Daniel15.Sharpamp
 		}
 	}
 
-	/// <summary>
-	/// Represents the method that will handle the StatusChangedEvent
-	/// </summary>
-	/// <param name="sender">Winamp object that sent the event</param>
-	/// <param name="e">Arguments for the event</param>
-	public delegate void StatusChangedEventHandler(object sender, StatusChangedEventArgs e);
 	/// <summary>
 	/// Provides data for the StatusChanged event
 	/// </summary>
